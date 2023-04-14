@@ -147,11 +147,11 @@ form {
   margin: 25px 25px 25px 25px;
 }
 .corpo {
-  border: 5px solid red;
+  border: 5px solid black;
   border-radius: 50px;
   text-align: center;
   padding: 25px;
-  background-color: rgb(250, 183, 217);
+  background-color: blue;
 }
 
 .salvas {
