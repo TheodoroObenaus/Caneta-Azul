@@ -13,6 +13,8 @@ const hobie = ref('')
 const lingua = ref('')
 const biografia = ref('')
 
+const mostrar = ref(false)
+
 </script>
 
 <template>
@@ -27,10 +29,10 @@ const biografia = ref('')
     <input type="password" v-model="senha" placeholder="Digite sua senha" />
     <p>Confirmar senha: </p>
     <input type="password" v-model="senha1" placeholder="Digite sua senha" />
-    <div>
+    <div v-if="senha === senha1">
       ta certa a senha
     </div>
-    <div>
+    <div v-else>
       a senha ta errada
     </div>
     <p>Data de Nascimento;</p>
@@ -84,6 +86,58 @@ const biografia = ref('')
   </div>
 </form> 
 
+<div class="salvas">
+<button  @click="$event => mostrar = !mostrar"> 
+  Informações Salvas
+</button>
+  <div v-if="mostrar">
+    <div>
+      <div>
+        <div>
+          nome:
+        {{ nome }}
+      </div>
+      <div>
+        email:
+        {{ email }}
+      </div>
+      <div>
+        senha:
+        {{ senha }}
+      </div>
+      <div>
+        data de nascimento:
+        {{ data }}
+      </div>
+      <div>
+        endereço:
+        {{ endereço }}
+      </div>
+      <div>
+        cidade:
+        {{ cidade }}
+      </div>
+      <div>
+        estado:
+        {{ estado }}
+      </div>
+      <div>
+        hobbies:
+        {{ hobie }}
+      </div>
+      <div>
+        Linguagem que programa:
+        {{ lingua }}
+      </div>
+      <div>
+        <p>biografia: </p>
+        {{ biografia }}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 </template>
 
 <style scoped>
@@ -95,6 +149,12 @@ form {
 .corpo {
   border: 5px solid red;
   border-radius: 50px;
+  text-align: center;
+  padding: 25px;
+  background-color: rgb(250, 183, 217);
+}
+
+.salvas {
   text-align: center;
   padding: 25px;
 }
