@@ -84,13 +84,20 @@ const mostrar = ref(false)
     <p>Biografia:</p>
     <textarea v-model="biografia" cols="30" rows="10"></textarea>
   </div>
-</form> 
+
+    <div class="ajeitameio" v-if="senha === senha1">
+      <button type="submit"> 
+        Salvar
+      </button>
+    </div>
+
+  </form> 
 
 <div class="salvas">
 <button  @click="$event => mostrar = !mostrar"> 
   Informações Salvas
 </button>
-  <div v-if="mostrar">
+  <div v-if="mostrar" class="braba">
     <div>
       <div>
         <div>
@@ -147,14 +154,45 @@ form {
   margin: 25px 25px 25px 25px;
 }
 .corpo {
-  border: 5px solid black;
+  border: 5px solid red;
+  border-radius: 10px;
+  box-shadow: red 5px 5px 5px 0px;
   border-radius: 50px;
   text-align: center;
   padding: 25px;
-  background-color: blue;
+  background-color: black;
+  color: white;
+  margin-bottom: 10px;
 }
 
 .salvas {
+  text-align: center;
+  padding: 25px;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: yellow 5px solid;
+  border-radius: 10px 10px 10px 10px;
+  box-shadow: yellow 5px 5px 5px 0px;
+}
+
+.braba {
+  text-align: center;
+  padding: 25px;
+  border: 5px solid green;
+  border-radius: 10px;
+  box-shadow: green 5px 5px 5px 0px;
+  border-radius: 50px;
+  text-align: center;
+  padding: 25px;
+  background-color: black;
+  color: white;
+  margin-top: 10px;
+}
+
+.ajeitameio {
   text-align: center;
   padding: 25px;
 }
